@@ -1,10 +1,11 @@
 use std::io;
 use rand::Rng;
 use std::cmp;
+use colored::*;
 
 fn main() {
     // generated a random number
-    let tar = rand::thread_rng().gen_range(1..101);
+    let tar = rand::rng().random_range(1..101);
     // continously guessing number
     loop {
         // get a number string from standard input
@@ -24,11 +25,12 @@ fn main() {
             Ok(num) => { num },
             Err(_) => { continue },
         };
+        // make it different when print out correct or right guess
         match guess.cmp(&tar) {
-            cmp::Ordering::Less => { println!("Too small.") },
-            cmp::Ordering::Greater => { println!("Too big.") },
+            cmp::Ordering::Less => { println!("{}", "Too small.".red()) },
+            cmp::Ordering::Greater => { println!("{}", "Too big.".red()) },
             cmp::Ordering::Equal => {
-                println!("You win!");
+                println!("{}", "You win!".green());
                 break;
             },
         };
