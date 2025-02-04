@@ -17,6 +17,22 @@ fn test_shadowing()
     // mut_spaces = mut_spaces.len(); mismatched types expected `&str`, found `usize`
 }
 
+fn test_copy()
+{
+    let tup1 = (1, 2, (), "Hello World");
+    let tup2 = tup1;
+
+    println!("tup1: {:?}, tup2: {:?}", tup1, tup2);
+}
+
+fn test_close()
+{
+    let tup1 = (1, 2, (), "Hello World".to_string());
+    let tup2 = tup1.clone();
+
+    println!("tup1: {:?}, tup2: {:?}", tup1, tup2);
+}
+
 fn main() {
     let var = 5;
     println!("the value of var is {var}.");
@@ -25,4 +41,7 @@ fn main() {
     println!("the value of mut_var is {mut_var}.");
 
     test_shadowing();
+
+    test_copy();
+    test_close();
 }
