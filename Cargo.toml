@@ -1,0 +1,8 @@
+[workspace]
+members = [
+    "data_types",
+    "guessing_game",
+    "hello_world",
+    "structure",
+    "variables"
+]
