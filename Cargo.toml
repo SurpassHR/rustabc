@@ -6,3 +6,4 @@ members = [
     "structure",
     "variables"
 ]
+resolver = "2"
