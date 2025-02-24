@@ -1,9 +1,10 @@
 [workspace]
 members = [
-    "data_types",
+    "data_types", "enums",
     "guessing_game",
     "hello_world",
     "structure",
-    "variables"
+    "variables",
+    "enums",
 ]
 resolver = "2"
