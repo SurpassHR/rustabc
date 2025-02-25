@@ -17,6 +17,32 @@ impl IpAddrKind {
     }
 }
 
+fn if_let_pattern() {
+    let mut some_value = Some(3);
+    match some_value {
+        Some(3) => println!("three"),
+        _ => (),
+    }
+
+    if some_value == Some(3) {
+        println!("three");
+    }
+
+    some_value = None;
+
+    if let Some(3) = some_value {
+        println!("three");
+    } else {
+        println!("none");
+    }
+
+    if let Some(value) = some_value {
+        println!("{}", value);
+    } else {
+        println!("none");
+    }
+}
+
 fn main() {
     let localhost: IpAddrKind = IpAddrKind::V4(127, 0, 0, 1);
     let ip_v6_addr: IpAddrKind = IpAddrKind::V6(String::from("fe80::215:5dff:fe06:a4f5"));
@@ -27,4 +53,6 @@ fn main() {
     // second print method
     localhost.print();
     ip_v6_addr.print();
+
+    if_let_pattern();
 }
