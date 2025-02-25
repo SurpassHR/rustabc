@@ -1,6 +1,6 @@
 [workspace]
 members = [
-    "data_types", "enums",
+    "data_types",
     "guessing_game",
     "hello_world",
     "structure",
