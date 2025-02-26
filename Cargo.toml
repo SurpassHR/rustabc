@@ -6,6 +6,6 @@ members = [
     "structure",
     "variables",
     "enums",
-    "overwatch_quick_game",
+    "overwatch_quick_game", "overwatch_lib",
 ]
 resolver = "2"
